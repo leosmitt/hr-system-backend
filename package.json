@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "deploy:prod": "wrangler deploy --env production",
+    "deploy:prod": "wrangler deploy",
     "logs": "wrangler tail",
     "db:init": "wrangler d1 execute hr-system-db --file=../../migrations/001_initial_schema.sql",
     "db:remote": "wrangler d1 execute hr-system-db --remote --file=../../migrations/001_initial_schema.sql"
@@ -17,6 +17,6 @@
     "cookie": "^0.5.0"
   },
   "devDependencies": {
-    "wrangler": "^3.0.0"
+    "wrangler": "^4.0.0"
   }
 }
