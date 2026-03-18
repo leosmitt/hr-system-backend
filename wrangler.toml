@@ -23,4 +23,4 @@ ENVIRONMENT = "production"
 
 # Production settings
 [env.production]
-vars = .env
+vars = ".env"
