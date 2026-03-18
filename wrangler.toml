@@ -1,4 +1,4 @@
-name = "hr-system-api"
+name = "hr-system-backend"
 main = "src/index.js"
 compatibility_date = "2024-01-01"
 
@@ -7,20 +7,19 @@ compatibility_date = "2024-01-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "hr-system-db"
-database_id = "your-database-id-here" # npx wrangler d1 create မှရလာသော ID ကို ဤနေရာတွင်ထည့်ပါ
+database_id = "cb4b3219-fac7-4efc-89d0-2943fb350b50" # npx wrangler d1 create မှရလာသော ID ကို ဤနေရာတွင်ထည့်ပါ
 
 # KV for sessions
 # အသုံးပြုသူအနေဖြင့် 'npx wrangler kv:namespace create SESSIONS' command ဖြင့် KV အရင်ဆောက်ရပါမည်။
 [[kv_namespaces]]
 binding = "SESSIONS"
-id = "your-kv-id-here" # npx wrangler kv:namespace create မှရလာသော ID ကို ဤနေရာတွင်ထည့်ပါ
+id = "10ee9e749aa74d69bbaecd9b900a1873" # npx wrangler kv:namespace create မှရလာသော ID ကို ဤနေရာတွင်ထည့်ပါ
 
 # Environment variables
 [vars]
-JWT_SECRET = "REPLACE_WITH_A_SECURE_RANDOM_STRING"
 JWT_EXPIRE = "7d"
 ENVIRONMENT = "production"
 
 # Production settings
 [env.production]
-vars = ".env"
+vars = { ENVIRONMENT = ".env" }
