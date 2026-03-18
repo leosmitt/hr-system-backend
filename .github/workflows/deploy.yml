@@ -1,0 +1,24 @@
+name: Deploy Backend to Cloudflare Workers
+
+on:
+  push:
+    branches:
+      - main  # main branch ကို push လုပ်လိုက်တာနဲ့ deploy လုပ်မယ်
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ui1DdzDfb0dFsSVLcijgueKonHRBCyG0iF9YWOsV
+          accountId: 5b29bce3b2061f8210c013f2bc67470a
+          command: deploy
