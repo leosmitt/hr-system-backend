@@ -1,0 +1,22 @@
+{
+  "name": "hr-system-backend",
+  "version": "1.0.0",
+  "description": "Backend API for HR System",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:prod": "wrangler deploy --env production",
+    "logs": "wrangler tail",
+    "db:init": "wrangler d1 execute hr-system-db --file=../../migrations/001_initial_schema.sql",
+    "db:remote": "wrangler d1 execute hr-system-db --remote --file=../../migrations/001_initial_schema.sql"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "cookie": "^0.5.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
