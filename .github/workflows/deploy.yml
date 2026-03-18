@@ -21,4 +21,4 @@ jobs:
         with:
           apiToken: ui1DdzDfb0dFsSVLcijgueKonHRBCyG0iF9YWOsV
           accountId: 5b29bce3b2061f8210c013f2bc67470a
-          command: deploy --env production
+          command: deploy 
